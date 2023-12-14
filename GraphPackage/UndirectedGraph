@@ -1,0 +1,78 @@
+            }
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
+
+
+    @Override
+
+    public boolean removeEdge(T begin, T end) {
+
+        Vertex<T> vertex1 = getVertex(begin);
+
+        Vertex<T> vertex2 = getVertex(end);
+
+
+
+        if (vertex1 != null && vertex2 != null) {
+
+            adjacencyList.get(vertex1).remove(vertex2);
+
+            adjacencyList.get(vertex2).remove(vertex1);
+
+            return true;
+
+        }
+
+
+
+        return false;
+
+    }
+
+
+
+    @Override
+
+    public List<Vertex<T>> getVertices() {
+
+        return new ArrayList<>(adjacencyList.keySet());
+
+    }
+
+
+
+    @Override
+
+    public List<Vertex<T>> getNeighbors(Vertex<T> vertex) {
+
+        return new ArrayList<>(adjacencyList.get(vertex));
+
+    }
+
+
+
+    public Vertex<T> getVertex(T vertexLabel) {
+
+        for (Vertex<T> vertex : adjacencyList.keySet()) {
+
+            if (vertex.getLabel().equals(vertexLabel)) {
+
+                return vertex;
+
+            }
+
+        }
+
+        return null;
+
+    }
+
+}
+
