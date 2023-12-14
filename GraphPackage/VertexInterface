@@ -1,0 +1,38 @@
+package GraphPackage;
+
+
+
+import java.util.List;
+
+
+
+public interface VertexInterface<T> {
+
+
+
+ T getLabel();
+
+ void setLabel(T label);
+
+ void visit();
+
+ void unvisit();
+
+ boolean isVisited();
+
+ boolean connect(VertexInterface<T> endVertex, double edgeWeight);
+
+ boolean disconnect(VertexInterface<T> endVertex);
+
+ double getWeight(VertexInterface<T> endVertex);
+
+ List<VertexInterface<T>> getNeighbors();
+
+ List<Double> getNeighborWeights();
+
+ int getNeighborCount();
+
+ void disconnectAll();
+
+}
+
