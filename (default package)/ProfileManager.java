@@ -159,7 +159,6 @@ public class ProfileManager {
             System.out.println("8. Switch the current user");
             System.out.println("9. Logout (end program)");
 
-            // Check if there's an integer available
             if (scanner.hasNextInt()) {
                 choice = scanner.nextInt();
 
@@ -195,7 +194,6 @@ public class ProfileManager {
                         System.out.println("Invalid choice. Please enter a number between 1 and 9.");
                 }
             } else {
-                // Consume the non-integer input to avoid an infinite loop
                 scanner.next();
                 System.out.println("Invalid input. Please enter a number between 1 and 9.");
             }
